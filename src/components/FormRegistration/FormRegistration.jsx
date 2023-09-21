@@ -4,11 +4,12 @@ import { nanoid } from 'nanoid';
 
 export class FormRegistration extends Component {
   state = {
-    id: nanoid(),
     name: '',
     number: '',
   };
   getContactData = event => {
+    const idContact = nanoid();
+    this.setState({ id: idContact });
     const { name, value } = event.target;
     this.setState({ [name]: value });
   };
